@@ -91,3 +91,7 @@
     border: none;
     background: none;
 }
+.dropdown-cont button:hover{
+    color: crimson;
+    scale: 1.02;
+}

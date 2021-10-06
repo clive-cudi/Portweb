@@ -63,6 +63,7 @@
   font-size: 13px;
   font-family: "Josefin Sans", sans-serif;
   font-weight: bold;
+  background: none;
 }
 .input-div i {
   color: gray;
@@ -96,6 +97,7 @@
   margin-top: 20px;
   height: 50px;
   min-height: 60px;
+  background: none;
 }
 .contact-inputs form textarea:hover {
   border: 0.4px solid rgb(126, 57, 57);

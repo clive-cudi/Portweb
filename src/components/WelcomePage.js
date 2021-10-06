@@ -9,6 +9,7 @@ import Projects from "./Projects";
 import Dropdown from "./Dropdown";
 import { useContext } from "react";
 import { DropdownContext } from "./contexts/DropdownCtx";
+import Footer from "./Footer";
 
 function Welcome({ name }) {
   const [dropdown] = useContext(DropdownContext);
@@ -23,6 +24,7 @@ function Welcome({ name }) {
         <SkillsPage />
         <Projects />
         <ContactPage />
+        <Footer />
       </div>
     </div>
   );

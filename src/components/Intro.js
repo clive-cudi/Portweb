@@ -44,7 +44,7 @@ function Intro({ name }) {
             <p style={{
                 color: darkTheme ? "white" : "black",
             }}>
-              Front end oriented Web Developer who loves coding and building
+              Passionate Web Developer who loves coding and building
               cool stuff
             </p>
           </div>

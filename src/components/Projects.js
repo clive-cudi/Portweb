@@ -1,8 +1,11 @@
 import React from 'react';
 import './projects.css';
 import Card from './Card';
+import { useContext } from 'react';
+import { ThemeContext } from './contexts/ThemeContext';
 
 function Projects() {
+    const darkTheme = useContext(ThemeContext);
     const projects = ['Plovie', 'Tonial', 'Plug Chat', 'Plug Connect'];
     const projectDescriptions = [
         "Plovie is a Movie web Application that makes use of a couple of API's to provide movie recommendations to users",
@@ -40,7 +43,9 @@ function Projects() {
         <div className="projects-main-wrapper" id="Projects">
             <div className="projects-main-cont">
                 <div className="projects-title">
-                    <h1>What I've Done :</h1>
+                    <h1 style={{
+                        color: darkTheme ? "white" : "black"
+                    }}>What I've Done :</h1>
                 </div>
                 <div className="cards-wrapper">
                     {
