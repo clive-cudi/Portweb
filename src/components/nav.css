@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Montserrat&display=swap');
+/* .nav-wrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+} */
+.navbar-main-wrapper{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+}
+.navbar-cont{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-name-wrapper{
+    display: flex;
+    height: 100%;
+    width: 140px;
+    align-items: center;
+    justify-content: center;
+}
+.nav-name-wrapper h1{
+    color: black;
+    font-family: 'Ephesis', cursive;
+    letter-spacing: 1px;
+}
+.nav-controls-wrapper{
+    display: flex;
+    height: 100%;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+.nav-controls{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-controls button{
+    height: 30px;
+    color: black;
+    background: none;
+    border: none;
+    transition-duration: 0.2s;
+    /* font-family: 'Akronim', cursive; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+.nav-controls button a {
+    color: black;
+}
+.nav-controls button a:hover{
+    color: crimson;
+}
+.nav-controls button:hover{
+    scale: 1.02;
+}
+.dropdown-wrapper{
+    display: flex;
+    height: 280px;
+    width: 100%;
+    position: fixed;
+    padding: 10px;
+    flex-direction: column;
+    background: white;
+    box-shadow: 1px 1px 4px 2px gray;
+}
+.dropdown-cont{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.dropdown-cont button{
+    border: none;
+    background: none;
+}
