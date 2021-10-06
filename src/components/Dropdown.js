@@ -1,11 +1,15 @@
 import React from "react";
 import { DropdownContext } from "./contexts/DropdownCtx";
 import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 function Dropdown({ navOptions }) {
-  const [dropdown, setDropdown] = useContext(DropdownContext)
+  const [dropdown, setDropdown] = useContext(DropdownContext);
+  const [darkTheme] = useContext(ThemeContext)
   return (
-    <div className="dropdown-wrapper">
+    <div className="dropdown-wrapper" style={{
+      background: darkTheme ? "rgb(22, 22, 22)" : "white",
+    }}>
       <div className="dropdown-close" style={{
         display:  "flex",
         height: "20px",
@@ -19,7 +23,8 @@ function Dropdown({ navOptions }) {
           alignItems: "center",
           justifyContent: "center",
           background: "none",
-          border: "none"
+          border: "none",
+          color: darkTheme ? "white" : "black"
         }} onClick={()=>{
           dropdown ? setDropdown(false) : setDropdown(false)
         }}><i className="fa fa-times"></i></button>
@@ -35,7 +40,7 @@ function Dropdown({ navOptions }) {
                 href={`#${option}`}
                 style={{
                   textDecoration: "none",
-                  color: "black",
+                  color: darkTheme? "white" : "black",
                 }}
               >
                 {option}
