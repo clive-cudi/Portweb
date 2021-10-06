@@ -41,7 +41,6 @@ function Navbar({name}){
                     {
                         mini === false ?
                         navOptions.map((option)=>{
-                            console.log(option)
                             return(
                             <button key={navOptions.indexOf(option)}><a href={`#${option}`} style={{
                                 textDecoration: "none",

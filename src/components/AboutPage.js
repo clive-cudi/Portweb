@@ -1,12 +1,11 @@
 import React from "react";
 import "./about.css";
 import busy from "./assets/images/30840-work-from-home.gif";
-import resume from './assets/docs/Resume_CliveFlavius.pdf';
 import { ThemeContext } from "./contexts/ThemeContext";
 import { useContext } from "react";
 import man from './assets/images/manOnTable.svg'
 
-function AboutPage() {
+function AboutPage({aboutParagraph, resumeLink}) {
   const [darkTheme] = useContext(ThemeContext)
   return (
     <section className="about-main-wrapper" id="About">
@@ -27,11 +26,9 @@ function AboutPage() {
             wordSpacing: '2px',
             color: darkTheme ? 'white' : 'black'
           }}>
-            Am a passionate Web Developer who loves coding and programming, alot ;).
-            I love building new and interesting ideas for myself and for those who wish to bring their thoughts to life.
-            I also do Music Production [Making Beats] and 3d Modelling [Mostly Blender ;)] for fun along with some Game Development.
+            {aboutParagraph}
           </p>
-          <a href={resume}><button>View Resume</button></a>
+          <a href={resumeLink}><button>View Resume</button></a>
         </div>
         <div className="about-pic">
           <div className="image-holder">

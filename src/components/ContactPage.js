@@ -4,7 +4,7 @@ import mailDark from "./assets/images/contactMailDark.svg";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { useContext } from "react";
 
-function ContactPage() {
+function ContactPage({contactInfo}) {
   const [darkTheme] = useContext(ThemeContext);
   return (
     <section className="contact-main-wrapper" id="Contact">
@@ -35,7 +35,7 @@ function ContactPage() {
               <button type="submit">Submit</button>
             </form>
             <div className="contact-info"> 
-                <a href="mailto:clivemaina41@gmail.com">                <i className="far fa-envelope"></i> clivemaina41@gmail.com</a>
+                <a href={`mailto:${contactInfo.email}`}>                <i className="far fa-envelope"></i> {contactInfo.email}</a>
             </div>
             <div className="contact-info" style={{
               color: darkTheme ? "white" : "black"
@@ -43,7 +43,7 @@ function ContactPage() {
                 <i className="fa fa-phone-alt"style={{
                     color: darkTheme ? "white" : "black"
                 }}></i> 
-                +254 771 575 804
+                {contactInfo.phoneNumber}
             </div>
           </div>
         </div>

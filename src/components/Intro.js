@@ -8,7 +8,7 @@ import { ThemeContext } from "./contexts/ThemeContext";
 import { useContext } from "react";
 import hiDark from './assets/images/developerActivity.svg'
 
-function Intro({ name }) {
+function Intro({ firstName, lastName, jobTitles, briefIntro }) {
   const [darkTheme, setDarkTheme] = useContext(ThemeContext);
 
   function toggleTheme() {
@@ -27,14 +27,18 @@ function Intro({ name }) {
             <h2 style={{
                 color: darkTheme ? "white" : "black",
             }}>Hi There ;) Meet me,</h2>
-            <h1>{name} Flavius</h1>
+            <h1>{firstName} {lastName}</h1>
           </div>
           <div className="intro-skills">
             <div className="typing-demo"
             style={{
                 color: darkTheme ? "white" : "black",
             }}>
-              Programmer. Web Developer & Designer. Techie ;)
+              {jobTitles.map((title)=>{
+                return (
+                  ` ${title} .`
+                )
+              })}
             </div>
           </div>
           <div className="intro-words">
@@ -44,8 +48,7 @@ function Intro({ name }) {
             <p style={{
                 color: darkTheme ? "white" : "black",
             }}>
-              Passionate Web Developer who loves coding and building
-              cool stuff
+              {briefIntro}
             </p>
           </div>
           <label
