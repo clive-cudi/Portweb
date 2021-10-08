@@ -49,7 +49,8 @@ function Navbar({name}){
                             )
                         })
                         : <button style={{
-                            cursor: "pointer"
+                            cursor: "pointer",
+                            color: darkTheme ? "white" : "black"
                         }} onClick={()=>{showDropdown === true ? setDropdown(false): setDropdown(true)}}><i className="fa fa-bars" style={{
                             fontSize: "24px",
                             marginRight: "20px"
