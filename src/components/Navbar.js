@@ -1,63 +1,47 @@
-import React from "react";
-import './nav.css';
-//eslint-disable-next-line
-import { Link } from "react-scroll";
-import { useState } from "react";
-//eslint-disable-next-line
-import Dropdown from "./Dropdown";
-import { useEffect } from "react";
-import { useContext } from "react";
-import { DropdownContext } from "./contexts/DropdownCtx";
-import { ThemeContext } from "./contexts/ThemeContext";
+import React, { useContext } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import NavCtrlsLoggedIn from './navctrlsLgd';
+import NavCtrlsNotLoggedIn from './navCtrlsNotLgd';
+// import { AuthStateContext } from './context';
+import { useAuthState } from './context';
+import { userContext } from './userContext';
+import { AuthStateCurrentContext } from './context';
+import WatchlistBtn from './WatchlistBtn';
+import { UsernameCtx } from './contexts/UserNameCtx';
 
-function Navbar({name}){
-    const [mini, setMini] = useState(false);
-    const [showDropdown, setDropdown] = useContext(DropdownContext);
-    const navOptions = ['Intro', 'About', 'Skills', 'Projects', 'Contact'];
-    const [darkTheme] = useContext(ThemeContext);
-
+function Navbar() {
+    // const token = useContext(AuthStateContext);
+    // const user = useAuthState();
+    const [authState, setAuthState] = useContext(AuthStateCurrentContext)
+    const [globalUsername, setGlobalUsername] = useContext(userContext);
+    const [userName, setUsername] = useContext(UsernameCtx)
+    const [isLoggedIn, setLoggedIn] = useState({
+        loggedIn: true,
+        username: ''
+    });
     useEffect(()=>{
-        if (window.innerWidth <= 650){
-            setMini(true)
-        }else {
-            setMini(false)
-        }
+        let currentusername = localStorage.getItem('currentUser');
+        setGlobalUsername(currentusername);
+        setUsername(currentusername);
+        currentusername ? setAuthState(true) : setAuthState(false);
+        console.log(`local ${currentusername}\ncontext ${globalUsername}`)
+        // token.user = currentusername;
+        // console.log(token)
+        currentusername ? setLoggedIn({loggedIn: true, username:currentusername}) :setLoggedIn({loggedIn:false, username:currentusername})
     },[])
-
     return (
-        <div className="navbar-main-wrapper" style={{
-            background: darkTheme ? "rgb(22, 22, 22)" : "white"
-        }}>
-            <div className="navbar-cont">
-                <div className="nav-name-wrapper">
-                    <h1 style={{
-                        color: darkTheme ? "white" : "black"
-                    }}>{name}</h1>
+        <div className="navbar-cont">
+            <div className="project-title-wrapper">
+                <div className="project-title-cont">
+                    <h2><i className="fa fa-plug"></i> MOVIES</h2>
                 </div>
-                <div className="nav-controls-wrapper">
-                    <div className="nav-controls" style={{
-                        justifyContent: mini ? "end" : "space-evenly"
-                    }}>
-                    {
-                        mini === false ?
-                        navOptions.map((option)=>{
-                            return(
-                            <button key={navOptions.indexOf(option)}><a href={`#${option}`} style={{
-                                textDecoration: "none",
-                                color: darkTheme ? "white" : "black"
-                            }}>{option}</a></button>
-                            )
-                        })
-                        : <button style={{
-                            cursor: "pointer",
-                            color: darkTheme ? "white" : "black"
-                        }} onClick={()=>{showDropdown === true ? setDropdown(false): setDropdown(true)}}><i className="fa fa-bars" style={{
-                            fontSize: "24px",
-                            marginRight: "20px"
-                        }}></i></button>
-                    }
-                    </div>
-                </div>
+            </div>
+            <div className="nav-controls-wrapper">
+                <WatchlistBtn />
+                {
+                    authState === true ? <NavCtrlsLoggedIn username={isLoggedIn.username} /> : <NavCtrlsNotLoggedIn />
+                }
             </div>
         </div>
     )
