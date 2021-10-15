@@ -1,0 +1,54 @@
+.about-main-wrapper{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 40px;
+}
+.about-cont{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.about-details{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex: 0.5;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.about-pic{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex: 0.5;
+}
+.about-title{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.about-details p{
+    font-family: "Josefin Sans", sans-serif;
+}
+.about-details button{
+    margin-top: 40px;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background: crimson;
+    color: white;
+}
+.about-details button:hover{
+    border-radius: 10px;
+    scale: 1.01;
+    background: red;
+}
