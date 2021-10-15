@@ -1,0 +1,169 @@
+.contact-main-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+}
+.contact-cont {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.contact-details {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex: 0.5;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.contact-pic {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex: 0.5;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.contact-title {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.contact-details p {
+  font-family: "Josefin Sans", sans-serif;
+}
+.contact-inputs {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.contact-inputs form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+.contact-inputs form input {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  padding: 6px;
+  border: none;
+  font-size: 13px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  background: none;
+}
+.input-div i {
+  color: gray;
+}
+.input-div:hover i {
+  color: black;
+}
+.input-div input:focus {
+  outline: none;
+}
+.input-div {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-bottom: 0.4px solid rgb(211, 211, 211);
+  margin-top: 20px;
+}
+.input-div:focus{
+    border-bottom: 0.4px solid rgb(58, 21, 21);
+}
+.input-div:hover {
+  border-bottom: 0.4px solid rgb(126, 57, 57);
+}
+.contact-inputs form textarea {
+  border: 0.4px solid rgb(175, 175, 175);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+  height: 50px;
+  min-height: 60px;
+  background: none;
+}
+.contact-inputs form textarea:hover {
+  border: 0.4px solid rgb(126, 57, 57);
+}
+.contact-inputs form textarea:focus {
+  outline: none;
+}
+.contact-inputs form button {
+  height: 40px;
+  margin-top: 20px;
+  color: white;
+  background: crimson;
+  border: none;
+  border-radius: 50px;
+}
+.contact-inputs form button:hover {
+  background: red;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.contact-info {
+  display: flex;
+  margin-top: 20px;
+  height: 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.contact-info i {
+  margin: 4px;
+  color: gray;
+}
+.contact-info a {
+  text-decoration: none;
+  color: gray;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+  color: black;
+}
+.contact-info a:hover i {
+  color: black;
+}
+@media (max-width: 650px) {
+    .intro-details{
+        flex: 1;
+    }
+    .about-details{
+        flex: 1;
+    }
+    .skills-details{
+        flex: 1;
+    }
+    .contact-details{
+        flex: 1;
+    }
+    .intro-pic{
+        display: none;
+    }
+    .about-pic{
+        display: none;
+    }
+    .skills-pic{
+        display: none;
+    }
+    .contact-pic{
+        display: none;
+    }
+}
