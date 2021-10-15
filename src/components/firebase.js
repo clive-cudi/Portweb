@@ -1,27 +1,29 @@
-import {initializeApp} from 'firebase/app';
-import {getAnalytics} from 'firebase/analytics';
-import { getFirestore} from 'firebase/firestore';
-// import { collection, addDoc } from '@firebase/firestore';
-
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCPdM912-x4ASffULPljmCJ4w2F_1mbIkk",
+  apiKey: "AIzaSyCRYUeQitivYsA5-KFB6K7cgrrCIGEQ2tc",
 
-  authDomain: "netflix-clone-plug.firebaseapp.com",
+  authDomain: "clives-portfolio.firebaseapp.com",
 
-  projectId: "netflix-clone-plug",
+  projectId: "clives-portfolio",
 
-  storageBucket: "netflix-clone-plug.appspot.com",
+  storageBucket: "clives-portfolio.appspot.com",
 
-  messagingSenderId: "679482258420",
+  messagingSenderId: "690248541242",
 
-  appId: "1:679482258420:web:1e5db3c7dcf331bd07bfa1",
+  appId: "1:690248541242:web:8b2b59d218392293e14103",
 
-  measurementId: "G-80T0GJEL79",
+  measurementId: "G-56NMWJ1YV6",
 };
 
+// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
+
 const analytics = getAnalytics(app);
+
 const db = getFirestore();
 
 export {db};
