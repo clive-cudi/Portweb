@@ -1,6 +1,10 @@
 # Portweb
 Portfolio Website Template that is fully customizable (make it your own)
 Find the sample here ->(https://clives-portfolio.web.app)
+
+##
+Edit ./src/Setup.js to make your changes
+
 ## Available Scripts
 
 In the project directory, you can run:
