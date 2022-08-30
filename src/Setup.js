@@ -18,14 +18,14 @@ function Setup() {
   // Edit the following specified slots
 
   // Enter your First name and Last Name
-  const [Name] = useState({
+  const [Name, setName] = useState({
     first: "Clive",
     last: "Flavius",
   });
 
 
   // Your Job titles e.g
-  const [jobTitles] = useState([
+  const [jobTitles, setJobTitles] = useState([
     "Programmer",
     "Web Developer & Designer",
     "Techie ;)",
@@ -33,7 +33,7 @@ function Setup() {
 
 
   // A brief Intro about you
-  const [briefIntro] = useState(
+  const [briefIntro, setBriefntro] = useState(
     "Passionate Web Developer who loves coding and building cool stuff"
   );
   // A paragraph about you i.e what you do, what you like doing, hobbies, talents e.t.c... e.g
@@ -43,7 +43,7 @@ function Setup() {
 
 
   // Your Resume Download Link
-  const [resumeLink] = useState(resume);
+  const [resumeLink, setResumeLink] = useState(resume);
 
 
   // Your Skills along with the corresponding percentage level of knowledge
